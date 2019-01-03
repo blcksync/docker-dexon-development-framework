@@ -1,0 +1,30 @@
+version: "3"
+services:
+  truffle:
+    image: blcksync/dexon-development-framework:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./deploy:/root/deploy
+    env_file:
+      ./truffle.env
+    networks:
+      dexon-local-truffle-env:
+        aliases:
+          - dexon-truffle
+
+  ganache:
+    image: blcksync/dexon-ganache-cli:latest
+    ports:
+      - 7545:7545
+    env_file:
+      ./truffle.env
+    environment:
+      - DOCKER=true
+    networks:
+      dexon-local-truffle-env:
+        aliases:
+          - dexon-ganache
+
+networks:
+  dexon-local-truffle-env:
