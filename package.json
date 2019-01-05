@@ -1,0 +1,32 @@
+{
+  "name": "dexon-development-framework",
+  "version": "0.0.1",
+  "author": "matr1xc0in",
+  "license": "MIT",
+  "description": "A pre-configured npm module to include all necessary tools",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matr1xc0in/dexon-development-framework.git"
+  },
+  "scripts": {
+    "postinstall": "touch secret.js",
+    "compile": "dexon-truffle compile",
+    "test": "dexon-truffle test --network=development",
+    "migrate:development": "dexon-truffle migrate --network=development --reset",
+    "migrate:testnet": "dexon-truffle migrate --network=testnet --reset",
+    "watch": "webpack-dev-server --network=development",
+    "rpc": "dexon-ganache-cli -p 7545"
+  },
+  "dependencies": {
+    "@dexon-foundation/truffle": "^4.1.16",
+    "truffle-hdwallet-provider": "0.0.6",
+    "web3": "^1.0.0-beta.37"
+  },
+  "devDependencies": {
+    "@dexon-foundation/ganache-cli": "^6.2.5",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
