@@ -30,12 +30,12 @@ RUN cd /root; \
     && if [[ ! -e /usr/bin/easy_install ]];  then ln -sf /usr/bin/easy_install-2.7 /usr/bin/easy_install; fi ; \
     npm install -g tar@4.4.8 node-gyp@3.8.0 && npm install --python=/usr/bin/python && \
     npm install -g \
-      @dexon-foundation/truffle@4.1.16 \
-      @dexon-foundation/dsolc@0.5.1 \
+      @dexon-foundation/truffle@5.0.12 \
+      @dexon-foundation/dsolc@0.5.2 \
       @dexon-foundation/ganache-cli@6.2.5 \
-      @dexon-foundation/truffle-hdwallet-provider@0.0.7-beta.0 \
-      truffle-hdwallet-provider@0.0.7-beta.0 \
-      web3@1.0.0-beta.37
+      @dexon-foundation/truffle-hdwallet-provider@1.0.11 \
+      truffle-hdwallet-provider@1.0.5 \
+      web3@1.0.0-beta.49
 
 FROM blcksync/alpine-node:latest as runtime
 

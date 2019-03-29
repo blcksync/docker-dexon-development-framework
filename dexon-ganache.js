@@ -8,7 +8,7 @@ const ganache = require("@dexon-foundation/ganache-cli")
  * - secret.js
  */
 const secret = require('./secret')
-const mnemonic = process.env.MNENOMIC || secret.mnemonic
+const mnemonic = process.env.MNEMONIC || secret.custom_mnemonic
 const {
   PORT = 7545,
   NETWORK_ID = 5777,
