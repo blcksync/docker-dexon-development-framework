@@ -13,7 +13,7 @@ It includes:
 * Setting the mnenomic seed for BIP39 for deterministic keys. **Please do NOT use the
 example mnenomic keys anywhere else**. You will LOSE your DEX.
 * Pre-configure the docker host alias name `dexon-ganache` for ganache access
-* Utilize env variable `MNENOMIC` to override
+* Utilize env variable `MNEMONIC` to override and apply to ganache as default keys
 
 ## To build your truffle env docker image
 ```
@@ -30,11 +30,11 @@ example mnenomic keys anywhere else**. You will LOSE your DEX.
 ### Configuring credentials and private keys for testing and deployment
 
 We use docker-compose here to kick off both truffle env and ganache. They will share
-the same env variable `MNENOMIC` defined in `truffle.env`. This will be automatically picked
+the same env variable `MNEMONIC` defined in `truffle.env`. This will be automatically picked
 up since we use env variables to pass this inside the docker container.
 
 ### `truffle.env`: A local file that contains 2 environment variables to configure.
-#### **MNENOMIC**: The 12/16 word phrase to import private keys for testing and deployment inside the docker container.
+#### **MNEMONIC**: The 12/16 word phrase to import private keys for testing and deployment inside the docker container.
 #### **INFURA_API_KEY**: The Infura API token/key to utilize Infura to relay the signed transaction for you. This is fine because you have already signed your transaction offline in your container environment. The Infura API provides you a convinient proxy to interact with the Ethereum blockchain without you running a full node locally. The signed transaction is protected by your private key and won't be altered during the entire submission. Currently, I don't know if Infura supports Dexon, however, it will perhaps derive similar end results when this is point to a local node.
 
 ```

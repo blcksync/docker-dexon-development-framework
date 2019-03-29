@@ -12,10 +12,11 @@
  *   },
  */
 // We use truffle-hdwallet-provider 0.0.6 here
-var HDWalletProvider = require("truffle-hdwallet-provider");
-var secret = require('./secret');
-// process.env.MNENOMIC overrides user settings
-const mnemonic = process.env.MNENOMIC || secret.mnemonic;
+let HDWalletProvider = require("truffle-hdwallet-provider");
+const secret = require('./secret');
+// process.env.MNEMONIC overrides user settings
+console.log('secret.custom_mnemonic=' + secret.custom_mnemonic);
+let mnemonic = secret.custom_mnemonic;
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
