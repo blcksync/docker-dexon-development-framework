@@ -87,6 +87,8 @@ cd myfirst_project
 # dexon-truffle init
 git clone -b develop https://github.com/truffle-box/react-box.git
 cd react-box
+cp /root/secret.js ./secret.js
+cp /root/truffle.js ./truffle.js
 dexon-truffle compile
 dexon-truffle test --network=development
 dexon-truffle migrate --network=development
